@@ -1,0 +1,133 @@
+page {
+  width: 100%;
+  height: 100%;
+}
+.wrap{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/*头部样式*/
+.top{
+  width:100%;
+  height:320rpx;
+  background:rgba(255,255,100,.1);
+}
+.header{
+  width:100%;
+  height:320rpx;
+  overflow: hidden;
+}
+.header text{
+  display: block;
+  width:100%;
+  height:100rpx;
+  line-height:100rpx;
+  margin-top:100rpx;
+  text-align: center;
+}
+.loginBtn{
+  width:100%;
+  height:80rpx;
+  margin-bottom: 40rpx;
+}
+.loginBtn button{
+  width:40%;
+  height:80rpx;
+  padding:0;
+  margin:0 30%;
+  line-height:80rpx;
+  border-radius: 50rpx;
+  color:#89be48;
+  border-color: #89be48;
+  font-size: 36rpx;
+}
+.loginHeader{
+  width:100%;
+  height:320rpx;
+  display: flex;
+  align-items: center;
+}
+.loginHeader>view:nth-of-type(1){
+  width:150rpx;
+  height:150rpx;
+  margin:0 15rpx 0 30rpx;
+  border-radius: 50%;
+  background-color: #89be48;
+  overflow: hidden;
+}
+.loginHeader>view:nth-of-type(1) image{
+  width:100%;
+  height:100%;
+} 
+.loginHeader>view:nth-of-type(2){
+  flex: 1;
+  height:150rpx;
+  line-height: 100rpx;
+}
+/*内容区样式*/
+.section{
+  width:100%;
+  display: flex;
+  flex-direction:column;
+}
+.list1{
+  width:100%;
+  height:260rpx;
+}
+.list1>view{
+  width:33%;
+  height:128rpx;
+  float:left;
+  border-bottom: 2rpx solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list1>view image{
+  width:20%;
+  margin-right:10%;
+  height:60rpx;
+}
+.list1>view text{
+  display: block;
+  width:48%;
+  height:60rpx;
+  line-height:60rpx;
+  font-size: 28rpx;
+  border-right: 1rpx solid #ccc;
+}
+.list1>view:nth-of-type(3n) text{
+  border-right: none;
+}
+.list2 view{
+  width:100%;
+  height:100rpx;
+  border-bottom: 1rpx solid #ccc;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  position: relative;
+}
+.list2 view image{
+  height:48rpx;
+  width:48rpx;
+  margin-left:20rpx;
+}
+.list2 view image:nth-child(3){
+  position: absolute;
+  right:20rpx;
+}
+.list2 view text{
+  margin-left:20rpx;
+}
+
+
+
+
+
+
+
+
+

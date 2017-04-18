@@ -1,0 +1,17 @@
+<!--pages/order/order.wxml-->
+<view class="wrap">
+    <scroll-view scroll-y="true" class="wrap_con" hidden="{{isShow}}">
+        <view wx:for="{{orderList}}" class="proList" data-id="{{item.id}}" wx:key="unique">
+            <view class="img"><image src="{{'http://i.lifevccdn.com'+item.img}}"></image></view>
+            <text class="name">{{item.name}}</text>
+            <view class="price">
+                <text>{{"￥"+item.price}}</text>
+                <text>{{"x "+item.num}}</text>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="proList_null" hidden="{{!isShow}}">
+        <text>您还没有订单哦</text>
+        <button type="primary">赶快去购物吧</button>
+    </view>
+</view>

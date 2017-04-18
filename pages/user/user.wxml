@@ -1,0 +1,98 @@
+<scroll-view class="wrap" scroll-y="true">
+<view class="top">
+    <view class="header" hidden="{{isLogin}}">
+        <text>您还未登录</text>
+        <view class="loginBtn">
+            <button plain="true" bindtap="toLogin">登录 | 注册</button>
+        </view>
+    </view>
+    <view class="loginHeader" hidden="{{!isLogin}}">
+        <view bindtap="chooseImg">
+            <image src="{{headImg}}"></image>
+        </view>
+        <view>
+            <text>{{"用户名："+user}}</text>
+        </view>
+    </view>
+</view>
+<view class="section">
+    <view class="list1">
+       <view>
+            <image src="../images/pic1.png"></image>
+            <text>待支付</text>
+       </view> 
+       <view>
+            <image src="../images/pic2.png"></image>
+            <text>待发货</text>
+       </view> 
+       <view>
+            <image src="../images/pic3.png"></image>
+            <text>待收货</text>
+       </view> 
+       <view>
+            <image src="../images/pic4.png"></image>
+            <text>待评论</text>
+       </view> 
+       <view>
+            <image src="../images/pic5.png"></image>
+            <text>回复</text>
+       </view> 
+       <view>
+            <image src="../images/pic6.png"></image>
+            <text>退换货</text>
+       </view> 
+    </view>
+    <view class="list2">
+        <view bindtap="toOrder">
+            <image src="../images/li1.png"></image>
+            <text>我的订单</text>
+            <image src="../images/right.png"></image>
+       </view>
+       <view>
+            <image src="../images/li2.png"></image>
+            <text>我的优惠券</text>
+            <image src="../images/right.png"></image>
+       </view>
+       <view>
+            <image src="../images/li3.png"></image>
+            <text>现金积分</text>
+            <image src="../images/right.png"></image>
+       </view>
+       <view>
+            <image src="../images/li4.png"></image>
+            <text>礼品兑换</text>
+            <image src="../images/right.png"></image>
+       </view>
+       <view>
+            <image src="../images/li5.png"></image>
+            <text>我的关注</text>
+            <image src="../images/right.png"></image>
+       </view>
+       <view bindtap="toUserSet">
+            <image src="../images/li6.png"></image>
+            <text>设置</text>
+            <image src="../images/right.png"></image>
+       </view>
+       <view>
+            <image src="../images/li7.png"></image>
+            <text>老会员建议</text>
+            <image src="../images/right.png"></image>
+       </view>
+       <view>
+            <image src="../images/li8.png"></image>
+            <text>客户服务</text>
+            <image src="../images/right.png"></image>
+       </view>
+       <view>
+            <image src="../images/li9.png"></image>
+            <text>地址管理</text>
+            <image src="../images/right.png"></image>
+       </view>
+       <view>
+            <image src="../images/li10.png"></image>
+            <text>手机验证</text>
+            <image src="../images/right.png"></image>
+       </view>
+    </view>
+</view>
+</scroll-view>

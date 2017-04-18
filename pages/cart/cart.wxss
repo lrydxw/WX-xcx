@@ -1,0 +1,119 @@
+/* pages/search/search.wxss */
+page{
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+}
+.wrap{
+    width: 100%;
+    flex: 1;
+    overflow: auto;
+    background-color: #f5f5f5;
+}
+.wrap_con{
+    width:100%;
+    height:100%;
+}
+.proList{
+    width:96%;
+    height:200rpx;
+    padding:0 2%;
+    display: flex;
+    border-bottom: 2rpx solid #ccc;
+    background-color: #fff;
+}
+.proList .box{
+    width:50rpx;
+    height:200rpx;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top:10rpx;
+}
+.proList .img{
+    width:180rpx;
+    height:180rpx;
+    padding:10rpx;
+}
+.proList .name{
+    display: block;
+    height:190rpx;
+    padding-top:10rpx;
+    flex: 1;
+    font-size: 36rpx;
+}
+.proList .price{
+    width:100rpx;
+    height:190rpx;
+    padding-top:10rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.price text{
+    display: block;
+    flex: 1;
+    width:100%;
+    text-align: center;
+}
+.price text:nth-of-type(1){
+    line-height: 110rpx;
+}
+.price text:nth-of-type(2){
+    line-height: 40rpx;
+}
+.proList_null{
+    width:100%;
+    height:100%;
+}
+.proList_null text{
+    display: block;
+    width:100%;
+    height:300rpx;
+    text-align: center;
+    line-height:400rpx;
+    font-size:40rpx;
+}
+.proList_null button{
+    width:60%;
+    height:80rpx;
+    line-height:80rpx;
+    margin:0 auto;
+    border-radius: 0;
+}
+.footer{
+    width:98%;
+    height:80rpx;
+    padding-left:2%;
+    border-top:2rpx solid #ccc;
+    background-color: #efefef;
+    display: flex;
+}
+.footer .box{
+    width:160rpx;
+    height:80rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 32rpx;
+}
+.footer .countPrice{
+    flex: 1;
+    height:60rpx;
+    padding-top:20rpx;
+    font-size: 36rpx;
+
+}
+.countPrice text:nth-of-type(2){
+    color:#f00;
+    font-weight: 900;
+}
+.footer button{
+    width:240rpx;
+    height:80rpx;
+    line-height:80rpx;
+    font-size:36rpx;
+    border:0;
+    border-radius: 0;
+}

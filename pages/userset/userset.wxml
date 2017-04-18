@@ -1,0 +1,12 @@
+<view class="wrap">
+    <view>
+        <text>清理缓存数据</text>
+        <image src="../images/right.png"></image>
+    </view>
+    <view>
+        <text>关于LifeVC</text>
+        <image src="../images/right.png"></image>
+    </view>
+    <button type="primary" bindtap="back">返 回</button>
+    <button type="warn" bindtap="exit">退出当前账号</button>
+</view>

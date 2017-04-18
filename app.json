@@ -1,0 +1,55 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/kind/kind",
+    "pages/find/find",
+    "pages/cart/cart",
+    "pages/user/user",
+    "pages/detail/detail",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/userset/userset",
+    "pages/order/order",
+    "pages/product/product"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#89be48",
+    "navigationBarTitleText": "丽芙家居",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar": {
+    "backgroundColor":"#fff",
+    "selectedColor":"#89be48",
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text":"首页",
+      "iconPath": "pages/images/home.png",
+      "selectedIconPath": "pages/images/home_select.png"
+    },
+    {
+      "pagePath": "pages/kind/kind",
+      "text":"全部产品",
+      "iconPath": "pages/images/kind.png",
+      "selectedIconPath": "pages/images/kind_select.png"
+    },
+    {
+      "pagePath": "pages/find/find",
+      "text":"闲逛",
+      "iconPath": "pages/images/find.png",
+      "selectedIconPath": "pages/images/find_select.png"
+    },
+    {
+      "pagePath": "pages/cart/cart",
+      "text":"购物车",
+      "iconPath": "pages/images/cart.png",
+      "selectedIconPath": "pages/images/cart_select.png"
+    },
+    {
+      "pagePath": "pages/user/user",
+      "text":"账户中心",
+      "iconPath": "pages/images/user.png",
+      "selectedIconPath": "pages/images/user_select.png"
+    }]
+  }
+}

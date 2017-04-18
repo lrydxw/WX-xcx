@@ -1,0 +1,37 @@
+<scroll-view class="content" scroll-y="true" bindscrolltoupper="upper" bindscrolltolower="lower">
+    <view class="left">
+        <block wx:for="{{leftList}}" wx:key="unique">
+            <navigator class="leftProItem"  url="{{'../detail/detail?id='+item.ItemInfoID}}">
+                <view class="leftImg">
+                     <image src="{{'http://i.lifevccdn.com'+item.ImageUrl}}"></image>
+                </view>
+                <text>{{item.Name}}</text>
+                <view class="leftBottom">
+                    <view>{{"￥"+item.SalePrice}}</view>
+                    <view>月销{{item.SaleQty}}</view>
+                </view>
+            </navigator>
+        </block>
+    </view>
+    <view class="right">
+        <view class="rightFirst">
+            <block wx:for="{{right2}}" wx:key="unique">
+                <view class="firstItem">
+                    <text>{{item.Title}}</text>
+                </view>
+            </block>
+        </view>
+        <block wx:for="{{rightList}}" wx:key="unique">
+            <navigator class="rightProItem" url="{{'../detail/detail?id='+item.ItemInfoID}}">
+                <view class="rightImg">
+                    <image src="{{'http://i.lifevccdn.com'+item.ImageUrl}}"></image>
+                </view>
+                <text>{{item.Name}}</text>
+                <view class="rightBottom">
+                    <view>{{"￥"+item.SalePrice}}</view>
+                    <view>月销{{item.SaleQty}}</view>
+                </view>
+            </navigator>
+        </block>
+    </view>
+</scroll-view>

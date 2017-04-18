@@ -1,0 +1,348 @@
+<!--选项卡切换-->
+<scroll-view class="titleList" scroll-x="true" style="width:100%">
+    <view class="nav">
+        <view class="{{currentIndex == 0?'active':''}}" bindtap="changeCon" data-id="0">首页</view>
+        <view class="{{currentIndex == 1?'active':''}}" bindtap="changeCon" data-id="1">家务</view>
+        <view class="{{currentIndex == 2?'active':''}}" bindtap="changeCon" data-id="2">下厨</view>
+        <view class="{{currentIndex == 3?'active':''}}" bindtap="changeCon" data-id="3">家居服</view>
+        <view class="{{currentIndex == 4?'active':''}}" bindtap="changeCon" data-id="4">生活</view>
+        <view class="{{currentIndex == 5?'active':''}}" bindtap="changeCon" data-id="5">软装</view>
+        <view class="{{currentIndex == 6?'active':''}}" bindtap="changeCon" data-id="6">床品</view>
+        <view class="{{currentIndex == 7?'active':''}}" bindtap="changeCon" data-id="7">工作和旅行</view>
+    </view>
+</scroll-view>
+<!--swiper轮播图-->
+<swiper class="swiper" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current="{{current}}" bindchange="changeItem">
+  <swiper-item class="swiper-item">
+    <scroll-view scroll-y="true" class="proList">
+        <!--banner轮播-->
+        <swiper class="banner" autoplay="true" interval="1800" indicator-dots="true" circular="true" duration="300">
+           <swiper-item wx:for="{{bannerList}}" wx:key="*this" class="bannerList">
+                <image src="{{'http://i.lifevccdn.com'+item.ImageUrl}}"></image>
+           </swiper-item> 
+        </swiper>
+        <!--banner轮播下面的新人推荐-->
+        <block>
+            <view class="newData" wx:for="{{proList}}" wx:key="unique">
+                <image src="{{'http://i.lifevccdn.com'+item.InnerData.ImageUrl}}" style="height:{{item.InnerData.ImageHeight+'rpx'}}"></image>
+            </view>
+        </block>
+    </scroll-view>
+  </swiper-item>
+
+  <swiper-item class="swiper-item">
+    <scroll-view scroll-y="true" class="jiawu_warp">
+        <view class="jiawu_header">
+            <block wx:for="{{work_header}}" wx:key="unique">
+                <view class="jiawu_header_li" data-id="{{item.ItemIndexId}}">
+                    <view>
+                        <image src="{{'http://i.lifevccdn.com'+item.CategoryImageUrl}}"></image>
+                    </view>
+                    <text>{{item.Title}}</text>
+                </view>
+            </block>
+        </view>
+        <view class="bannerimg">
+            <image src="{{'http://i.lifevccdn.com'+work_bannerimg}}"></image>
+        </view>
+        <view class="jiawu_con">
+            <text class="jiawu_contit">{{work_contit}}</text>
+            <view class="jiawu_conList">
+                <block wx:for="{{work_conList}}" wx:key="unique">
+                    <view class="jiawu_con_li" bindtap="toDetail" data-id="{{item.ItemInfoId}}">
+                        <view class="jiawu_con_li_img">
+                            <image src="{{'http://i.lifevccdn.com'+item.ImageUrl}}"></image>
+                            <text>{{item.Appeal}}</text>
+                        </view>
+                        <view class="jiawu_con_li_name">
+                            <text>{{item.Name}}</text>
+                            <view>
+                                <text>关注</text>
+                                <image src="../images/detail_care.png"></image>
+                            </view>
+                        </view>
+                        <view class="jiawu_con_li_price">
+                            <view>
+                                <text>{{"￥"+item.SalePrice}}</text>
+                                <text wx:if="{{item.PriceTag}}">{{item.PriceTag}}</text>
+                            </view>
+                            <text>{{"评论："+item.CommentCount}}</text>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </scroll-view>
+  </swiper-item>
+
+  <swiper-item class="swiper-item">
+    <scroll-view scroll-y="true" class="xiachu_warp">
+        <view class="jiawu_header">
+            <block wx:for="{{work_header}}" wx:key="unique">
+                <view class="jiawu_header_li" data-id="{{item.ItemIndexId}}">
+                    <view>
+                        <image src="{{'http://i.lifevccdn.com'+item.CategoryImageUrl}}"></image>
+                    </view>
+                    <text>{{item.Title}}</text>
+                </view>
+            </block>
+        </view>
+        <view class="bannerimg">
+            <image src="{{'http://i.lifevccdn.com'+work_bannerimg}}"></image>
+        </view>
+        <view class="jiawu_con">
+            <text class="jiawu_contit">{{work_contit}}</text>
+            <view class="jiawu_conList">
+                <block wx:for="{{work_conList}}" wx:key="unique">
+                    <view class="jiawu_con_li" bindtap="toDetail" data-id="{{item.ItemInfoId}}">
+                        <view class="jiawu_con_li_img">
+                            <image src="{{'http://i.lifevccdn.com'+item.ImageUrl}}"></image>
+                            <text>{{item.Appeal}}</text>
+                        </view>
+                        <view class="jiawu_con_li_name">
+                            <text>{{item.Name}}</text>
+                            <view>
+                                <text>关注</text>
+                                <image src="../images/detail_care.png"></image>
+                            </view>
+                        </view>
+                        <view class="jiawu_con_li_price">
+                            <view>
+                                <text>{{"￥"+item.SalePrice}}</text>
+                                <text wx:if="{{item.PriceTag}}">{{item.PriceTag}}</text>
+                            </view>
+                            <text>{{"评论："+item.CommentCount}}</text>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </scroll-view>
+  </swiper-item>
+
+  <swiper-item class="swiper-item">
+    <scroll-view scroll-y="true" class="jiaju_warp">
+        <view class="jiawu_header">
+            <block wx:for="{{work_header}}" wx:key="unique">
+                <view class="jiawu_header_li" data-id="{{item.ItemIndexId}}">
+                    <view>
+                        <image src="{{'http://i.lifevccdn.com'+item.CategoryImageUrl}}"></image>
+                    </view>
+                    <text>{{item.Title}}</text>
+                </view>
+            </block>
+        </view>
+        <view class="bannerimg">
+            <image src="{{'http://i.lifevccdn.com'+work_bannerimg}}"></image>
+        </view>
+        <view class="jiawu_con">
+            <text class="jiawu_contit">{{work_contit}}</text>
+            <view class="jiawu_conList">
+                <block wx:for="{{work_conList}}" wx:key="unique">
+                    <view class="jiawu_con_li" bindtap="toDetail" data-id="{{item.ItemInfoId}}">
+                        <view class="jiawu_con_li_img">
+                            <image src="{{'http://i.lifevccdn.com'+item.ImageUrl}}"></image>
+                            <text>{{item.Appeal}}</text>
+                        </view>
+                        <view class="jiawu_con_li_name">
+                            <text>{{item.Name}}</text>
+                            <view>
+                                <text>关注</text>
+                                <image src="../images/detail_care.png"></image>
+                            </view>
+                        </view>
+                        <view class="jiawu_con_li_price">
+                            <view>
+                                <text>{{"￥"+item.SalePrice}}</text>
+                                <text wx:if="{{item.PriceTag}}">{{item.PriceTag}}</text>
+                            </view>
+                            <text>{{"评论："+item.CommentCount}}</text>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </scroll-view>
+  </swiper-item>
+
+  <swiper-item class="swiper-item">
+    <scroll-view scroll-y="true" class="life_warp">
+        <view class="jiawu_header">
+            <block wx:for="{{work_header}}" wx:key="unique">
+                <view class="jiawu_header_li" data-id="{{item.ItemIndexId}}">
+                    <view>
+                        <image src="{{'http://i.lifevccdn.com'+item.CategoryImageUrl}}"></image>
+                    </view>
+                    <text>{{item.Title}}</text>
+                </view>
+            </block>
+        </view>
+        <view class="bannerimg">
+            <image src="{{'http://i.lifevccdn.com'+work_bannerimg}}"></image>
+        </view>
+        <view class="jiawu_con">
+            <text class="jiawu_contit">{{work_contit}}</text>
+            <view class="jiawu_conList">
+                <block wx:for="{{work_conList}}" wx:key="unique">
+                    <view class="jiawu_con_li" bindtap="toDetail" data-id="{{item.ItemInfoId}}">
+                        <view class="jiawu_con_li_img">
+                            <image src="{{'http://i.lifevccdn.com'+item.ImageUrl}}"></image>
+                            <text>{{item.Appeal}}</text>
+                        </view>
+                        <view class="jiawu_con_li_name">
+                            <text>{{item.Name}}</text>
+                            <view>
+                                <text>关注</text>
+                                <image src="../images/detail_care.png"></image>
+                            </view>
+                        </view>
+                        <view class="jiawu_con_li_price">
+                            <view>
+                                <text>{{"￥"+item.SalePrice}}</text>
+                                <text wx:if="{{item.PriceTag}}">{{item.PriceTag}}</text>
+                            </view>
+                            <text>{{"评论："+item.CommentCount}}</text>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </scroll-view>
+  </swiper-item>
+
+  <swiper-item class="swiper-item">
+    <scroll-view scroll-y="true" class="ruanzhuang_warp">
+        <view class="jiawu_header">
+            <block wx:for="{{work_header}}" wx:key="unique">
+                <view class="jiawu_header_li" data-id="{{item.ItemIndexId}}">
+                    <view>
+                        <image src="{{'http://i.lifevccdn.com'+item.CategoryImageUrl}}"></image>
+                    </view>
+                    <text>{{item.Title}}</text>
+                </view>
+            </block>
+        </view>
+        <view class="bannerimg">
+            <image src="{{'http://i.lifevccdn.com'+work_bannerimg}}"></image>
+        </view>
+        <view class="jiawu_con">
+            <text class="jiawu_contit">{{work_contit}}</text>
+            <view class="jiawu_conList">
+                <block wx:for="{{work_conList}}" wx:key="unique">
+                    <view class="jiawu_con_li" bindtap="toDetail" data-id="{{item.ItemInfoId}}">
+                        <view class="jiawu_con_li_img">
+                            <image src="{{'http://i.lifevccdn.com'+item.ImageUrl}}"></image>
+                            <text>{{item.Appeal}}</text>
+                        </view>
+                        <view class="jiawu_con_li_name">
+                            <text>{{item.Name}}</text>
+                            <view>
+                                <text>关注</text>
+                                <image src="../images/detail_care.png"></image>
+                            </view>
+                        </view>
+                        <view class="jiawu_con_li_price">
+                            <view>
+                                <text>{{"￥"+item.SalePrice}}</text>
+                                <text wx:if="{{item.PriceTag}}">{{item.PriceTag}}</text>
+                            </view>
+                            <text>{{"评论："+item.CommentCount}}</text>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </scroll-view>
+  </swiper-item>
+
+  <swiper-item class="swiper-item">
+    <scroll-view scroll-y="true" class="chuangpin_warp">
+        <view class="jiawu_header">
+            <block wx:for="{{work_header}}" wx:key="unique">
+                <view class="jiawu_header_li" data-id="{{item.ItemIndexId}}">
+                    <view>
+                        <image src="{{'http://i.lifevccdn.com'+item.CategoryImageUrl}}"></image>
+                    </view>
+                    <text>{{item.Title}}</text>
+                </view>
+            </block>
+        </view>
+        <view class="bannerimg">
+            <image src="{{'http://i.lifevccdn.com'+work_bannerimg}}"></image>
+        </view>
+        <view class="jiawu_con">
+            <text class="jiawu_contit">{{work_contit}}</text>
+            <view class="jiawu_conList">
+                <block wx:for="{{work_conList}}" wx:key="unique">
+                    <view class="jiawu_con_li" bindtap="toDetail" data-id="{{item.ItemInfoId}}">
+                        <view class="jiawu_con_li_img">
+                            <image src="{{'http://i.lifevccdn.com'+item.ImageUrl}}"></image>
+                            <text>{{item.Appeal}}</text>
+                        </view>
+                        <view class="jiawu_con_li_name">
+                            <text>{{item.Name}}</text>
+                            <view>
+                                <text>关注</text>
+                                <image src="../images/detail_care.png"></image>
+                            </view>
+                        </view>
+                        <view class="jiawu_con_li_price">
+                            <view>
+                                <text>{{"￥"+item.SalePrice}}</text>
+                                <text wx:if="{{item.PriceTag}}">{{item.PriceTag}}</text>
+                            </view>
+                            <text>{{"评论："+item.CommentCount}}</text>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </scroll-view>
+  </swiper-item>
+
+  <swiper-item class="swiper-item">
+    <scroll-view scroll-y="true" class="work_warp">
+        <view class="jiawu_header">
+            <block wx:for="{{work_header}}" wx:key="unique">
+                <view class="jiawu_header_li" data-id="{{item.ItemIndexId}}">
+                    <view>
+                        <image src="{{'http://i.lifevccdn.com'+item.CategoryImageUrl}}"></image>
+                    </view>
+                    <text>{{item.Title}}</text>
+                </view>
+            </block>
+        </view>
+        <view class="bannerimg">
+            <image src="{{'http://i.lifevccdn.com'+work_bannerimg}}"></image>
+        </view>
+        <view class="jiawu_con">
+            <text class="jiawu_contit">{{work_contit}}</text>
+            <view class="jiawu_conList">
+                <block wx:for="{{work_conList}}" wx:key="unique">
+                    <view class="jiawu_con_li" bindtap="toDetail" data-id="{{item.ItemInfoId}}">
+                        <view class="jiawu_con_li_img">
+                            <image src="{{'http://i.lifevccdn.com'+item.ImageUrl}}"></image>
+                            <text>{{item.Appeal}}</text>
+                        </view>
+                        <view class="jiawu_con_li_name">
+                            <text>{{item.Name}}</text>
+                            <view>
+                                <text>关注</text>
+                                <image src="../images/detail_care.png"></image>
+                            </view>
+                        </view>
+                        <view class="jiawu_con_li_price">
+                            <view>
+                                <text>{{"￥"+item.SalePrice}}</text>
+                                <text wx:if="{{item.PriceTag}}">{{item.PriceTag}}</text>
+                            </view>
+                            <text>{{"评论："+item.CommentCount}}</text>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>

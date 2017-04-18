@@ -1,0 +1,89 @@
+page{
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+}
+/*全部产品的头部*/
+.header{
+    height:150rpx;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+}
+.searchText{
+    height:108rpx;
+    margin:20rpx;
+    border:1px solid #ccc;
+    border-radius: 20rpx;
+    text-indent: 16rpx;
+    background-color: #fff;
+}
+.searchBtn[plain]{
+    width:128rpx;
+    height:70rpx;
+    border:none;
+    position: absolute;
+    right:2rpx;
+    top:38rpx;
+    z-index: 1;
+}
+/*全部产品的内容区*/
+.section{
+    width:100%;
+    flex: 1;
+    overflow: auto;
+}
+.left{
+    float: left;
+    width:25%;
+    height:100%;
+    background-color: #f5f5f5;
+    overflow: auto;
+}
+.left view{
+    height:100rpx;
+    width:100%;
+    line-height: 100rpx;
+    text-align: center;
+    font-size: 36rpx;
+    border-bottom: 1px solid #c2c2c2;
+}
+.left .active{
+    color:#fff;
+    background-color: #89be48;
+}
+.right{
+    float: left;
+    width:75%;
+    height:100%;
+    background-color: #fff;
+    overflow: auto;
+}
+.proList{
+    float: left;
+    width:187rpx;
+    height:280rpx;
+}
+.proList>image{
+    width: 187rpx;
+    height:190rpx;
+}
+.proList>view{
+    width:100%;
+    height:40rpx;
+    text-align: center;
+    font-size: 30rpx;
+    line-height: 40rpx;
+}
+
+
+
+
+
+
+
+
+
+
+

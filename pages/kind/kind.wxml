@@ -1,0 +1,29 @@
+<view class="header">
+  <input class="searchText" placeholder="输入商品内容" value="{{inputValue}}" bindinput="bindinput"/>
+  <button class="searchBtn" plain="true" bindtap="bindButtonTap">
+    <image src="../images/search.png"></image>
+  </button>
+</view>
+<view class="section" >
+  <view class="left"> 
+  <scroll-view  scroll-y="true" style="height:100%">
+    <view class="{{name=='家务'?'active':''}}" bindtap="changeCon" id="家务">家务</view>
+    <view class="{{name=='下厨'?'active':''}}" bindtap="changeCon" id="下厨">下厨</view>
+    <view class="{{name=='家居服'?'active':''}}" bindtap="changeCon" id="家居服">家居服</view>
+    <view class="{{name=='生活'?'active':''}}" bindtap="changeCon" id="生活">生活</view>
+    <view class="{{name=='软装'?'active':''}}" bindtap="changeCon" id="软装">软装</view>
+    <view class="{{name=='床品'?'active':''}}" bindtap="changeCon" id="床品">床品</view>
+    <view class="{{name=='工作和旅行'?'active':''}}" bindtap="changeCon" id="工作和旅行">工作和旅行</view>
+  </scroll-view>
+  </view>
+  <view class="right"> 
+    <scroll-view scroll-y="true" style="height:100%">
+      <block wx:for="{{proList}}" wx:key="unique">
+        <navigator class="proList" url="{{'../product/product?id='+item.ItemIndexId+'&name='+proName}}">
+          <image src="{{'http://i.lifevccdn.com'+item.Icon}}"></image>
+          <view>{{item.Name}}</view>
+        </navigator>
+      </block>
+    </scroll-view>
+    </view>
+</view>

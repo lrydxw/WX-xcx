@@ -1,0 +1,27 @@
+<view class="header">
+    
+</view>
+<form bindsubmit="formSubmit" class="registerCon">
+    <view>
+        <label>手机  ：</label>
+        <input name="username" maxlength="11" placeholder="请输入手机号" /> 
+    </view>
+    <view>
+        <label>邮箱  ：</label>
+        <input name="email" placeholder="请填写常用的邮箱" />  
+    </view>
+    <view>
+        <label>设置密码：</label>
+        <input name="password" password="true" placeholder="密码必须是是6-20位字母、数字或符号" />  
+    </view>
+    <view>
+        <label>确认密码：</label>
+        <input name="password2" password="true" maxlength="20" placeholder="请再次填写密码" />  
+    </view>
+    <view class="randomtxt">
+        <label>验证码：</label>
+        <input name="random" placeholder="请填写右侧验证码" /> 
+        <text bindtap="changeRandom">{{randomMsg}}</text> 
+    </view>
+    <button formType="submit" type="primary" >注  册</button>
+</form>

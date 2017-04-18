@@ -1,0 +1,17 @@
+<!--pages/product/product.wxml-->
+<scroll-view scroll-y="true" class="content">
+    <view class="proList">
+       <block wx:for="{{product}}" wx:key="unique">
+            <navigator class="proItem"  url="{{'../detail/detail?id='+item.ItemInfoId}}">
+                <view class="proImg">
+                     <image src="{{'http://i.lifevccdn.com'+item.ImageUrl}}"></image>
+                </view>
+                <text>{{item.Name}}</text>
+                <view class="proBottom">
+                    <view>{{"￥"+item.SalePrice}}</view>
+                    <view>{{"月销："+item.CommentCount}}</view>
+                </view>
+            </navigator>
+        </block>
+    </view>
+</scroll-view>

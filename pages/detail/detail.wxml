@@ -1,0 +1,82 @@
+<view class="wrap">
+    <scroll-view scroll-y="true" style="height:100%"> 
+        <text class="top">{{Caption}}</text>
+        <swiper class="banner" autoplay="true" interval="1800" indicator-dots="true" circular="true" duration="300">
+            <swiper-item wx:for="{{headerList}}" wx:key="*this" class="headerList">
+                <image src="{{'http://i.lifevccdn.com'+item.ImageUrl}}"></image>
+            </swiper-item> 
+        </swiper>
+        <view class="jieshao">
+            <view>
+                <text>{{name}}</text>
+                <text>{{"￥"+price}}</text>
+            </view>
+            <view>
+                <image src="../images/detail_care.png"></image>
+                <text>关注</text>
+            </view>
+        </view>
+        <view class="msg">
+            <view class="cuxiao">
+                <text class="text">促销：</text>
+                <view class="cu_right">
+                <!--福利-->
+                   <view>
+                        <view>
+                            <text class="tit" style="background:{{'#'+prompts[0].Tag.BGColor}};color:{{'#'+prompts[0].Tag.Color}}">{{prompts[0].Tag.Text}}</text>
+                            <text class="textmsg">{{prompts[0].Text}}</text>
+                        </view>
+                        <image src="../images/right.png"></image>
+                   </view>
+                <!--劵-->
+                    <view>
+                        <view>
+                            <text class="tit" style="background:{{'#'+prompts[0].Tag.BGColor}};color:{{'#'+prompts[0].Tag.Color}}">{{prompts[1].Tag.Text}}</text>
+                            <text class="textmsg">{{prompts[1].Text}}</text>
+                        </view>
+                        <image src="../images/right.png"></image>
+                    </view>
+
+                </view>
+            </view>
+
+            <view>
+                <text class="text">服务：</text>
+                <text class="text_con">{{server}}</text>
+            </view>
+
+            <view>
+                <text class="text">数量：</text>
+                <view class="count">
+                    <button disabled="{{num==1?true:false}}" bindtap="prev" plain="true">-</button>
+                    <text>{{num}}</text>
+                    <button bindtap="add" plain="true">+</button>
+                </view>
+            </view>
+
+            <view>
+                <text class="text">送至：</text>
+                <text class="text_con">河南(满￥149免运费)</text>
+            </view>
+
+            <view wx:for="{{youhui}}" wx:key="unique">
+                <image src="{{'http://i.lifevccdn.com/'+item.ImageUrl}}" style="height:{{item.ImageHeight+'rpx'}}"></image>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<footer class="footer">
+    <view>
+        <image src="../images/detail_kefu.png"></image>
+        <text>客服</text>
+    </view>
+    <view>
+        <image src="../images/detail_care.png"></image>
+        <text>关注</text>
+    </view>
+    <view bindtap="toCart">
+        <image src="../images/cart_select.png"></image>
+        <text>{{totalNum}}</text>
+    </view>
+    <button bindtap="addCart">加入购物车</button>
+</footer>
